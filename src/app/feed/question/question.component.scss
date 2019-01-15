@@ -1,0 +1,31 @@
+section.answers {
+	// padding-top: 10px;
+	.reply-box {
+		margin-bottom: 20px;
+		display: flex;
+		padding: 0 20px;
+		justify-content: space-between;
+		align-items: center;
+		> div[mdcTextField] {
+			width: 100%;
+			margin-right: 20px;
+		}
+		> button {
+			margin-top: 5px;
+		}
+	}
+	.answers-section {
+		padding: 0 20px;
+	}
+}
+
+.custom-card__primary > h2 {
+	padding: 0 20px;
+}
+p.custom-card__secondary {
+	padding: 0 20px;
+	margin-top: 0;
+}
+button.material-icons.bookmark {
+	color: #fc0;
+}

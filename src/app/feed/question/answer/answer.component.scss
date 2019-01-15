@@ -1,0 +1,37 @@
+main.holder {
+	display: flex;
+	.avatar {
+		> img {
+			width: 50px;
+		}
+		margin-right: 20px;
+	}
+	.textual-section {
+		width: 100%;
+		p.ans-text {
+			> p {
+				text-overflow: ellipsis;
+				overflow: hidden;
+				display: -webkit-box;
+				-webkit-line-clamp: 3;
+				-webkit-box-orient: vertical;
+			}
+		}
+
+		.created-header {
+			display: flex;
+			align-items: flex-start;
+			justify-content: space-between;
+			span.createdBy {
+				color: #59a3fc;
+				font-size: 14px;
+			}
+			span.createdAt {
+				@extend span.createdBy;
+				font-size: 12px;
+			}
+		}
+	}
+
+	padding-bottom: 20px;
+}

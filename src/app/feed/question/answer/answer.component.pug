@@ -1,0 +1,10 @@
+main.holder
+	.avatar
+		img(*ngIf="answer.createdBy && answer.createdBy.avatar; else noImage", [src]="answer.createdBy.avatar")
+		ng-template('#noImage'='')
+			img.image-placeholder(src='/assets/boy.svg')
+	.textual-section
+		.created-header
+			span.createdBy {{ ((!answer.createdBy.name) ? answer.createdBy : answer.createdBy.name + ' ' + answer.createdBy.surname)}}
+			span.createdAt {{answer.createdAt}}
+		p.ans-text([innerHTML]="answer.text")

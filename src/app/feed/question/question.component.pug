@@ -1,0 +1,28 @@
+.custom-card(mdcCard='')
+	a(mdcCardPrimaryAction='', href='javascript:void(0)', routerLink="question/{{question.id}}")
+		.custom-card__primary
+			h2 {{question.id}}
+			p.custom-card__secondary([innerHTML]="question.text")
+	section(mdcCardActions='')
+		div(mdcCardActionButtons='')
+			button(mdcButton='', (click)="voteUp(true)")
+				i.material-icons(mdcButtonIcon='') arrow_upward
+				| &nbsp; {{question.upvotes}}
+			button(mdcButton='', (click)="voteUp(false)")
+				i.material-icons(mdcButtonIcon='') arrow_downward
+				| &nbsp; {{question.downvotes}}
+		div(mdcCardActionIcons='')
+			button.material-icons.bookmark(mdcIconButton='', labelOn='Remove from favorites', labelOff='Add to favorites', iconOn='bookmark', iconOff='bookmark_border')
+			button.material-icons(mdcIconButton='', title='Share')
+				| share
+			button.material-icons(mdcIconButton='', title='More options')
+				| more_vert
+	section.answers
+		.reply-box
+			div(mdcTextField='', [box]='box', [outlined]='true', [dense]='true')
+				i.material-icons(mdcTextFieldIcon='') add_comment
+				input(mdcTextFieldInput='', type='text', [(ngModel)]="answerToBePosted")
+				label(mdcFloatingLabel='') Answer
+			button(mdcButton='', [raised]="true", (click)="postAnswer()") Post
+		.answers-section
+			qf-answer(*ngFor="let answer of question.answers", [answer]="answer")

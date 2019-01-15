@@ -1,0 +1,10 @@
+.feed-holder {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 20px;
+	> qf-question {
+		margin: 10px;
+		width: 70%;
+	}
+}
